@@ -2,7 +2,7 @@ package com.newsapp.data.source.remote.mapper
 
 import com.newsapp.data.source.remote.entity.ArticleResponse
 import com.newsapp.domain.model.Article
-import com.newsapp.util.EntityMapper
+import com.newsapp.data.util.EntityMapper
 import javax.inject.Inject
 
 class ArticleRemoteMapper @Inject constructor(

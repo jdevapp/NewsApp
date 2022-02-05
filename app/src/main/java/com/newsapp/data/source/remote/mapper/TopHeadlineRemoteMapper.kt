@@ -2,7 +2,7 @@ package com.newsapp.data.source.remote.mapper
 
 import com.newsapp.data.source.remote.entity.TopHeadlineResponse
 import com.newsapp.domain.model.TopHeadline
-import com.newsapp.util.EntityMapper
+import com.newsapp.data.util.EntityMapper
 import javax.inject.Inject
 
 class TopHeadlineRemoteMapper @Inject constructor(

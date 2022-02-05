@@ -47,6 +47,9 @@ dependencies {
     implementation(Libs.AndroidX.Navigation.fragmentKtx)
     implementation(Libs.AndroidX.Navigation.uiKtx)
     implementation(Libs.AndroidX.Navigation.dynamicFeatures)
+    implementation(Libs.AndroidX.Room.runtime)
+    implementation(Libs.AndroidX.Room.ktx)
+    kapt(Libs.AndroidX.Room.compiler)
 
     // Google
     implementation(Libs.Google.material)
@@ -67,6 +70,7 @@ dependencies {
     // Dependencies for local unit tests
     testImplementation(Libs.Test.junit)
     testImplementation(Libs.AndroidX.Navigation.test)
+    testImplementation(Libs.AndroidX.Room.test)
     testImplementation(Libs.Kotlin.Coroutines.android)
     testImplementation(Libs.Kotlin.Coroutines.test)
     testImplementation(Libs.Google.truth)

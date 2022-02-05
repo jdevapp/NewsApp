@@ -6,5 +6,4 @@ import retrofit2.http.GET
 interface DutchNewsService {
     @GET
     suspend fun getTopHeadlines(): List<TopHeadlineResponse>
-
 }
