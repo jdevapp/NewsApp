@@ -1,9 +1,6 @@
 package com.newsapp.data.source.local.db
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 import com.newsapp.data.source.local.entity.ArticleEntity
 
 /**
@@ -19,9 +16,12 @@ interface ArticlesDao {
     suspend fun find(id: String): ArticleEntity?
 
     @Insert
-    suspend fun insert(article: ArticleEntity): Long
+    suspend fun insert(vararg article: ArticleEntity)
 
     @Update
     suspend fun update(article: ArticleEntity)
+
+    @Query("DELETE from articles")
+    suspend fun deleteAll()
 
 }

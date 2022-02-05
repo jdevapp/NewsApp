@@ -25,7 +25,7 @@ class ArticleLocalMapper @Inject constructor(
 
     override fun mapToEntity(domainEntity: Article): ArticleEntity {
         return ArticleEntity(
-            sourceName = domainEntity.source,
+            sourceName = domainEntity.source!!,
             author = domainEntity.author,
             title = domainEntity.title,
             description = domainEntity.description,

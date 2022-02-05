@@ -7,9 +7,6 @@ import com.newsapp.result.Result
 import com.newsapp.result.Result.*
 import javax.inject.Inject
 
-/**
- * Concrete implementation of a data source as a db.
- */
 class AppRemoteDataSourceImpl @Inject constructor(
     private val dutchNewsService: DutchNewsService,
     private val articleRemoteMapper: ArticleRemoteMapper
