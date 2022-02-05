@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
-
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/overviewFragment">
+    <fragment
+        android:id="@+id/overviewFragment"
+        android:name="com.newsapp.ui.overview.OverviewFragment"
+        android:label="@string/Overview"
+        tools:layout="@layout/fragment_overview" >
+        <action
+            android:id="@+id/action_overviewFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.newsapp.ui.details.DetailsFragment"
+        android:label="@string/Details"
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="label"
+            app:argType="string" />
+        <argument
+            android:name="articleId"
+            app:argType="string"/>
+    </fragment>
 </navigation>
