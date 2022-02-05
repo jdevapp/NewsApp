@@ -9,8 +9,8 @@ import java.util.*
 data class ArticleEntity (
     @PrimaryKey(autoGenerate = true)
     val articleId : Long? = null,
-    @ColumnInfo(name = "sourceId")
-    val sourceId: Long? = null,
+    @ColumnInfo(name = "sourceName")
+    val sourceName: String = "",
     @ColumnInfo(name = "author")
     val author: String = "",
     @ColumnInfo(name = "title")

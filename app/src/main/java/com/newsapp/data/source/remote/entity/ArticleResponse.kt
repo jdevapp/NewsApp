@@ -1,7 +1,7 @@
 package com.newsapp.data.source.remote.entity
 
 data class ArticleResponse (
-    var source: SourceResponse,
+    var source: SourceResponse? = null,
     var author: String = "",
     var title: String = "",
     var description: String = "",
