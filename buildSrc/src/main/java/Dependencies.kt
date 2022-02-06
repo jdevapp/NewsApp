@@ -8,13 +8,11 @@ object Libs {
     const val timber = "com.jakewharton.timber:timber"
     object AndroidX {
         const val coreKtx = "androidx.core:core-ktx:1.7.0"
-        const val collectionKtx = "androidx.collection:collection-ktx:1.2.0"
-        const val preferenceKtx = "androidx.preference:preference-ktx:1.1.1"
         const val appcompat = "androidx.appcompat:appcompat:1.4.0"
         const val datastorePreferences = "androidx.datastore:datastore-preferences:1.0.0"
         const val vectordrawableAnimated = "androidx.vectordrawable:vectordrawable-animated:1.1.0"
         const val constraintlayout = "androidx.constraintlayout:constraintlayout:2.0.4"
-        const val recyclerview = "androidx.recyclerview:recyclerview:1.2.0"
+        const val swiperefreshlayout = "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
         const val multidex = "com.android.support:multidex:2.0.1"
 
         object Navigation {

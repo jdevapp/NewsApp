@@ -2,6 +2,8 @@ package com.newsapp.di
 
 import android.content.Context
 import androidx.room.Room
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import com.newsapp.data.repository.ArticlesRepositoryImpl
 import com.newsapp.data.source.local.AppLocalDataSource
 import com.newsapp.data.source.local.AppLocalDataSourceImpl
@@ -29,6 +31,13 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class AppModule {
+
+    @Singleton
+    @Provides
+    fun provideGsonBuilder(): Gson {
+        return GsonBuilder().create()
+    }
+
     @Provides
     @Singleton
     fun provideAppDatabase(@ApplicationContext appContext: Context): AppDatabase {

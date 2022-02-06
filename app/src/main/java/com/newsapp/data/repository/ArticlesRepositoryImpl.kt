@@ -9,7 +9,7 @@ import com.newsapp.result.Result.Error
 import javax.inject.Inject
 
 /**
- * implementation of [ArticlesRepository]. Single entry point for managing tasks data.
+ * implementation of [ArticlesRepository]. Single entry point for managing articles data.
  */
 
 class ArticlesRepositoryImpl @Inject constructor(
@@ -18,22 +18,14 @@ class ArticlesRepositoryImpl @Inject constructor(
 ) : ArticlesRepository {
 
     override suspend fun getArticles(forceUpdate: Boolean): Result<List<Article>> {
-
-        if(forceUpdate){
-            updateArticlesFromRemoteDataSource()
-        }
-
-        val localArticles = localDataSource.getArticles()
-        if (localArticles is Error) {
-            try {
+        return try {
+            if(forceUpdate){
                 updateArticlesFromRemoteDataSource()
-            } catch (ex: Exception) {
-                return Error(ex)
             }
+            localDataSource.getArticles()
+        } catch (ex: Exception) {
+            Error(ex)
         }
-
-        return localDataSource.getArticles()
-
     }
     override suspend fun refreshArticles() {
         updateArticlesFromRemoteDataSource()

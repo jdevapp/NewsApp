@@ -18,10 +18,8 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object AppServiceModule {
-    const val VERSION = "v2"
-    const val COUNTRY = "nl"
-    const val APIKEY = "API_KEY"
-    const val BASE_URL = "https://newsapi.org/$VERSION/top-headlines?country=$COUNTRY&apiKey=$APIKEY"
+    private const val VERSION = "v2"
+    private const val BASE_URL = "https://newsapi.org/$VERSION/"
 
     @Singleton
     @Provides

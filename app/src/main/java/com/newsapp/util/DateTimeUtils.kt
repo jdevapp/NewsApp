@@ -6,7 +6,9 @@ import java.util.*
 
 class DateTimeUtils {
     companion object {
-        fun fromString(stringDate: String): Date? {
+        fun fromString(stringDate: String?): Date? {
+            if(stringDate == null)
+                return null
             var date: Date? = null
             val format = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault())
             format.timeZone = TimeZone.getTimeZone("Europe/Brussels")

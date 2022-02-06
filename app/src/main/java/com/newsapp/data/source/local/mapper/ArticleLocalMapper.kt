@@ -23,16 +23,16 @@ class ArticleLocalMapper @Inject constructor(
         )
     }
 
-    override fun mapToEntity(domainEntity: Article): ArticleEntity {
+    override fun mapToEntity(domainModel: Article): ArticleEntity {
         return ArticleEntity(
-            sourceName = domainEntity.source!!,
-            author = domainEntity.author,
-            title = domainEntity.title,
-            description = domainEntity.description,
-            url = domainEntity.url,
-            urlToImage = domainEntity.urlToImage,
-            publishedAt = domainEntity.publishedAt,
-            content = domainEntity.content,
+            sourceName = domainModel.source!!,
+            author = domainModel.author,
+            title = domainModel.title,
+            description = domainModel.description,
+            url = domainModel.url,
+            urlToImage = domainModel.urlToImage,
+            publishedAt = domainModel.publishedAt,
+            content = domainModel.content,
         )
     }
 
