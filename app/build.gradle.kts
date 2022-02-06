@@ -90,9 +90,6 @@ dependencies {
     androidTestImplementation(Libs.AndroidX.Test.Espresso.core)
     androidTestImplementation(Libs.AndroidX.Navigation.test)
     kaptAndroidTest(Libs.Google.Hilt.compiler)
-
-
-
 }
 // Allow references to generated code
 kapt {

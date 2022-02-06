@@ -31,7 +31,11 @@ class DetailsFragment: Fragment(R.layout.fragment_details) {
         adpt.submitList(viewModel.articles.value)
 
         binding.viewpager.adapter = adpt
-        binding.viewpager.setCurrentItem(10, false)
+
+        val position = arguments?.getInt("position")
+        if(position != null){
+            binding.viewpager.setCurrentItem(position, false)
+        }
 
     }
 }

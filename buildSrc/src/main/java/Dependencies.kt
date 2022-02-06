@@ -17,10 +17,10 @@ object Libs {
             private const val version = "2.5.0-alpha01"
             const val fragmentKtx = "androidx.navigation:navigation-fragment-ktx:$version"
             const val uiKtx = "androidx.navigation:navigation-ui-ktx:$version"
-            const val gradlePlugin = "androidx.navigation:navigation-safe-args-gradle-plugin:$version"
             const val dynamicFeatures = "androidx.navigation:navigation-dynamic-features-fragment:$version"
             const val test = "androidx.navigation:navigation-testing:$version"
             const val compose ="androidx.navigation:navigation-compose:$version"
+            const val gradlePlugin = "androidx.navigation:navigation-safe-args-gradle-plugin:$version"
         }
         object Fragment {
             private const val version = "1.4.0-alpha03"
