@@ -1,24 +1,18 @@
 package com.newsapp.ui.details
 
 import android.os.Bundle
-import android.util.Base64
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.viewpager2.widget.ViewPager2
 import com.newsapp.R
 import com.newsapp.databinding.FragmentDetailsBinding
-import com.newsapp.domain.model.Article
 import com.newsapp.ui.SharedViewModel
-import com.newsapp.ui.overview.ArticlesAdapter
-import com.newsapp.ui.overview.ArticlesListener
-import com.newsapp.util.launchAndRepeatWithViewLifecycle
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class DetailsFragment: Fragment(R.layout.fragment_details), ArticlesListener {
+class DetailsFragment: Fragment(R.layout.fragment_details) {
     private lateinit var binding: FragmentDetailsBinding
     private val viewModel: SharedViewModel by activityViewModels()
     private lateinit var adpt: ArticlesDetailsAdapter
@@ -37,10 +31,7 @@ class DetailsFragment: Fragment(R.layout.fragment_details), ArticlesListener {
         adpt.submitList(viewModel.articles.value)
 
         binding.viewpager.adapter = adpt
+        binding.viewpager.setCurrentItem(10, false)
 
-    }
-
-    override fun onArticleClicked(article: Article) {
-        TODO("Not yet implemented")
     }
 }

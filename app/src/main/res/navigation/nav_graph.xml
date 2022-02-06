@@ -22,7 +22,7 @@
             android:name="label"
             app:argType="string" />
         <argument
-            android:name="articleId"
-            app:argType="long"/>
+            android:name="position"
+            app:argType="integer"/>
     </fragment>
 </navigation>

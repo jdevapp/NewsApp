@@ -49,11 +49,9 @@ class SharedViewModel @Inject constructor(
         }
     }
 
-    fun onArticleClicked(id: Long){
-
+    fun refresh(){
+        fetchArticles()
     }
-
-
 
 }
 

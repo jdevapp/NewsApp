@@ -3,7 +3,7 @@ package com.newsapp.data.source.remote.mapper
 import com.newsapp.data.source.remote.entity.ArticleResponse
 import com.newsapp.domain.model.Article
 import com.newsapp.data.util.EntityMapper
-import com.newsapp.util.DateTimeUtils.Companion.fromString
+import com.newsapp.util.DateTimeUtils.fromString
 import javax.inject.Inject
 
 class ArticleRemoteMapper @Inject constructor(

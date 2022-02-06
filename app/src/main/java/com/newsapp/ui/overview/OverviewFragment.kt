@@ -14,7 +14,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade
 import com.newsapp.R
 import com.newsapp.databinding.FragmentOverviewBinding
 import com.newsapp.domain.model.Article
@@ -50,6 +49,12 @@ class OverviewFragment: Fragment(R.layout.fragment_overview), ArticlesListener {
             adapter = adpt
         }
 
+        binding.swiperefresh.setOnRefreshListener {
+            binding.swiperefresh.isRefreshing = false
+            binding.firstArticleProgress.show()
+            viewModel.refresh()
+        }
+
         //Third row : This web embbed
         val unencodedHtml = getString(R.string.web_embbed_html) // used by WebView
         val encodedHtml = Base64.encodeToString(unencodedHtml.toByteArray(), Base64.NO_PADDING)
@@ -72,16 +77,17 @@ class OverviewFragment: Fragment(R.layout.fragment_overview), ArticlesListener {
         launch  {
             viewModel.firstArticle.collect { article ->
                 if(article != null){
+                    binding.firstArticleProgress.hide()
+
                     Glide
                         .with(this@OverviewFragment)
                         .load(article.urlToImage)
                         .fallback(ColorDrawable(Color.GRAY))
                         .centerCrop()
-                        .transition(withCrossFade())
                         .into(binding.firstArticleImg)
 
                     binding.firstArticleCard.setOnClickListener {
-                        navigateToDetails(article.id!!)
+                        navigateToDetails(0)
                     }
                 }
             }
@@ -94,11 +100,10 @@ class OverviewFragment: Fragment(R.layout.fragment_overview), ArticlesListener {
                         .load(article.urlToImage)
                         .fallback(ColorDrawable(Color.GRAY))
                         .centerCrop()
-                        .transition(withCrossFade())
                         .into(binding.secondArticleImg)
 
                     binding.secondArticleCard.setOnClickListener {
-                        navigateToDetails(article.id!!)
+                        navigateToDetails(1)
                     }
                 }
             }
@@ -111,25 +116,25 @@ class OverviewFragment: Fragment(R.layout.fragment_overview), ArticlesListener {
                         .load(article.urlToImage)
                         .fallback(ColorDrawable(Color.GRAY))
                         .centerCrop()
-                        .transition(withCrossFade())
                         .into(binding.thirdArticleImg)
 
                     binding.thirdArticleCard.setOnClickListener {
-                        navigateToDetails(article.id!!)
+                        navigateToDetails(2)
                     }
                 }
             }
         }
     }
 
-    override fun onArticleClicked(article: Article) {
-        navigateToDetails(article.id!!)
+    // articles from Recyclerview
+    override fun onArticleClicked(article: Article, position: Int) {
+        navigateToDetails(position)
     }
 
-    private fun navigateToDetails(articleId: Long){
+    private fun navigateToDetails(position: Int){
         val bundle = bundleOf(
             "label" to "Details",
-            "articleId" to articleId
+            "position" to position
         )
         findNavController().navigate(R.id.action_overviewFragment_to_detailsFragment, bundle)
     }

@@ -9,6 +9,9 @@
             name="article"
             type="com.newsapp.domain.model.Article"/>
         <variable
+            name="position"
+            type="int"/>
+        <variable
             name="listener"
             type="com.newsapp.ui.overview.ArticlesListener"/>
     </data>
@@ -17,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:onClick="@{() ->  listener.onArticleClicked(article)}"
+        android:onClick="@{() ->  listener.onArticleClicked(article, position)}"
         app:rippleColor="@color/purple_500">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

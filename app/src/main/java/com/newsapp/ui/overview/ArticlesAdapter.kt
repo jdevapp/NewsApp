@@ -33,8 +33,9 @@ class ArticlesAdapter(
     }
 
     inner class ViewHolder(val binding: ItemArticleBinding): RecyclerView.ViewHolder(binding.root){
-        fun bind(article: Article, listener: ArticlesListener) {
+        fun bind(article: Article, position: Int, listener: ArticlesListener) {
             binding.article = article
+            binding.position = position
             binding.listener = listener
 
             Glide
@@ -55,7 +56,7 @@ class ArticlesAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(data.currentList[position], listener)
+        holder.bind(data.currentList[position], position, listener)
     }
     override fun getItemId(position: Int): Long {
         return data.currentList[position].hashCode().toLong()
