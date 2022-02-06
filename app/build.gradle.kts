@@ -83,7 +83,6 @@ dependencies {
     testImplementation(Libs.Google.truth)
     kaptTest(Libs.Google.Hilt.compiler)
 
-
     // AndroidX Test - JVM testing
     testImplementation(Libs.AndroidX.Test.Ext.junitKtx)
     // AndroidX Test - Instrumented testing

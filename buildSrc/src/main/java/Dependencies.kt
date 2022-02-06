@@ -9,7 +9,7 @@ object Libs {
         const val appcompat = "androidx.appcompat:appcompat:1.4.0"
         const val datastorePreferences = "androidx.datastore:datastore-preferences:1.0.0"
         const val vectordrawableAnimated = "androidx.vectordrawable:vectordrawable-animated:1.1.0"
-        const val constraintlayout = "androidx.constraintlayout:constraintlayout:2.0.4"
+        const val constraintlayout = "androidx.constraintlayout:constraintlayout:2.1.3"
         const val swiperefreshlayout = "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
         const val multidex = "com.android.support:multidex:2.0.1"
 

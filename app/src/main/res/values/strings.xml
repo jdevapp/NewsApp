@@ -2,4 +2,14 @@
     <string name="app_name">NewsApp</string>
     <string name="Overview">Overview</string>
     <string name="Details">Details</string>
+    <string name="More_">More…</string>
+    <string name="web_embbed_html">
+        <![CDATA[
+         <div class="widget" style="margin: .5em 0;">
+            <a href="https://m.gva.be/tag/coronavirus?origin=app">
+                <img src="https://static.gva.be/Assets/Images_Upload/2020/03/26/fifitent.jpg" style="display:block;width:100%;"/>
+            </a>
+         </div>
+        ]]>
+    </string>
 </resources>

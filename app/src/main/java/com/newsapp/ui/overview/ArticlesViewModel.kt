@@ -41,11 +41,17 @@ class ArticlesViewModel @Inject constructor(
                     val articles =  result.data
                     _articles.value = articles
                     _firstArticle.value  = articles.first()
+                    _secondArticle.value  = articles[1]
+                    _thirdArticle.value  = articles[2]
                 }
                 is Result.Loading -> {}
                 is Result.Error -> {}
             }
         }
+    }
+
+    fun onArticleClicked(id: Long){
+
     }
 
 
