@@ -1,6 +1,5 @@
-package com.newsapp.ui.overview
+package com.newsapp.ui
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.newsapp.domain.model.Article
@@ -13,7 +12,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class ArticlesViewModel @Inject constructor(
+class SharedViewModel @Inject constructor(
     private val articlesRepository: ArticlesRepository
 ) : ViewModel() {
 

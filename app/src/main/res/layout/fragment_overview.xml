@@ -3,11 +3,11 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.newsapp.ui.MainActivity">
+    tools:context="com.newsapp.MainActivity">
     <data>
         <variable
             name="viewModel"
-            type="com.newsapp.ui.overview.ArticlesViewModel" />
+            type="com.newsapp.ui.SharedViewModel" />
     </data>
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swiperefresh"
@@ -26,7 +26,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:onClick="@{() -> viewModel.onArticleClicked(0)}"
                     app:rippleColor="@color/purple_500"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -94,7 +93,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:onClick="@{() -> viewModel.onArticleClicked(0)}"
                     app:rippleColor="@color/purple_500"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/first_article_card"
@@ -123,14 +121,14 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@{viewModel.firstArticle.title}"
+                                android:text="@{viewModel.secondArticle.title}"
                                 android:textAppearance="?attr/textAppearanceListItem"
                                 tools:text="Title" />
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
-                                android:text="@{viewModel.firstArticle.source}"
+                                android:text="@{viewModel.secondArticle.source}"
                                 android:textAppearance="?attr/textAppearanceBody2"
                                 android:textColor="?android:attr/textColorSecondary"
                                 tools:text="source" />
@@ -161,7 +159,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:onClick="@{() -> viewModel.onArticleClicked(0)}"
                     app:rippleColor="@color/purple_500"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/second_article_card"
@@ -191,14 +188,14 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@{viewModel.firstArticle.title}"
+                                android:text="@{viewModel.thirdArticle.title}"
                                 android:textAppearance="?attr/textAppearanceListItem"
                                 tools:text="Title" />
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
-                                android:text="@{viewModel.firstArticle.source}"
+                                android:text="@{viewModel.thirdArticle.source}"
                                 android:textAppearance="?attr/textAppearanceBody2"
                                 android:textColor="?android:attr/textColorSecondary"
                                 tools:text="source" />

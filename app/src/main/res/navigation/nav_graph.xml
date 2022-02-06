@@ -23,6 +23,6 @@
             app:argType="string" />
         <argument
             android:name="articleId"
-            app:argType="string"/>
+            app:argType="long"/>
     </fragment>
 </navigation>
