@@ -70,6 +70,9 @@ dependencies {
     implementation(Libs.retrofit2.converterScalars)
     implementation(Libs.okhttp3.loggingInterceptor)
 
+    // Glide
+    implementation(Libs.Glide.library)
+    kapt (Libs.Glide.compiler)
 
     // Dependencies for local unit tests
     testImplementation(Libs.Test.junit)

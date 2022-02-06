@@ -1,8 +1,6 @@
 object Libs {
     const val androidGradlePlugin = "com.android.tools.build:gradle:7.1.0"
     const val lottie = "com.airbnb.android:lottie:4.0.0"
-    const val easypermissions = "pub.devrel:easypermissions:3.0.0"
-    const val picasso = "com.squareup.picasso:picasso:2.71828"
     const val threetenabp = "com.jakewharton.threetenabp:threetenabp"
     const val threetenbp = "org.threeten:threetenbp"
     const val timber = "com.jakewharton.timber:timber"
@@ -118,9 +116,9 @@ object Libs {
         const val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:$version"
     }
     object Glide {
-        private const val version = "1.4.0-alpha03"
-        const val GLIDE = "com.github.bumptech.glide:glide:$version"
-        const val GLIDE_COMPILER = "com.github.bumptech.glide:compiler:$version"
+        private const val version = "4.12.0"
+        const val library = "com.github.bumptech.glide:glide:$version"
+        const val compiler = "com.github.bumptech.glide:compiler:$version"
     }
     object Test {
         const val junit = "junit:junit:4.13.1"

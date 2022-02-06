@@ -9,6 +9,7 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 import com.newsapp.R
 import com.newsapp.databinding.FragmentOverviewBinding
 import com.newsapp.util.launchAndRepeatWithViewLifecycle
@@ -31,7 +32,8 @@ class OverviewFragment: Fragment(R.layout.fragment_overview) {
 
     override fun onViewCreated(view: View, bundle: Bundle?) {
         super.onViewCreated(view, bundle)
-
+        binding.lifecycleOwner = viewLifecycleOwner
+        binding.viewModel = viewModel
         binding.detailsButton.setOnClickListener {
             val bundle = bundleOf(
                 "label" to "label",
@@ -49,6 +51,16 @@ class OverviewFragment: Fragment(R.layout.fragment_overview) {
         launch  {
             viewModel.articles.collect { articles ->
                 Log.d("NEWSAPP_LOG", "articles.size: ${ articles.size}")
+            }
+        }
+        launch  {
+            viewModel.firstArticle.collect { article ->
+                if(article != null){
+                    Glide
+                        .with(this@OverviewFragment)
+                        .load(article!!.urlToImage)
+                        .into(binding.firstArticleImg)
+                }
             }
         }
 

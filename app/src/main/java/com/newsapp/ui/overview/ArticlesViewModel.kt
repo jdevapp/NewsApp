@@ -1,5 +1,6 @@
 package com.newsapp.ui.overview
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.newsapp.domain.model.Article
@@ -38,9 +39,8 @@ class ArticlesViewModel @Inject constructor(
             when (result) {
                 is Result.Success -> {
                     val articles =  result.data
-
-                    _firstArticle.value = articles.first()
                     _articles.value = articles
+                    _firstArticle.value  = articles.first()
                 }
                 is Result.Loading -> {}
                 is Result.Error -> {}

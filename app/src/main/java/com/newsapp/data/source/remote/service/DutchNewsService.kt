@@ -5,7 +5,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 const val COUNTRY = "nl"
-const val APIKEY = "your API_KEY"
+const val APIKEY = "143df5e39fd844bfbdf26ed16c67df44"
 const val TOP_HEADLINES_URL = "top-headlines/?apiKey=$APIKEY"
 
 interface DutchNewsService {

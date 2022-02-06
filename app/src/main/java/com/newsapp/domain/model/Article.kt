@@ -12,4 +12,8 @@ data class Article (
     var urlToImage: String? = "",
     var publishedAt: Date? = null,
     var content: String? = ""
-)
+){
+    override fun toString(): String {
+        return "Article(id=$id, source=$source, author=$author, title=$title, description=$description, url=$url, urlToImage=$urlToImage, publishedAt=$publishedAt, content=$content)"
+    }
+}
