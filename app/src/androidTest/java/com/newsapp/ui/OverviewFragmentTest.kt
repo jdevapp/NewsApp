@@ -3,10 +3,12 @@ package com.newsapp.ui
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.navigation.testing.TestNavHostController
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.RecyclerView
 import androidx.test.core.app.ApplicationProvider.getApplicationContext
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
-import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.espresso.contrib.RecyclerViewActions
+import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.newsapp.R
 import com.newsapp.domain.repository.ArticlesRepository
@@ -65,6 +67,11 @@ class OverviewFragmentTest {
         onView(withId(R.id.first_article_card)).perform(click())
         // THEN - Verify that we navigated to the Details screen.
         assertEquals(navController.currentDestination?.id, R.id.detailsFragment)
+
+        // WHEN - Click on the first list item
+        onView(withId(R.id.article_recyclerView))
+            .perform(RecyclerViewActions.actionOnItem<RecyclerView.ViewHolder>(
+                hasDescendant(withText("TITLE1")), click()))
     }
 
     private fun launchFragment(navController: TestNavHostController) {

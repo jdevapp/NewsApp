@@ -29,7 +29,7 @@ class SharedViewModelTest {
     var coroutineRule = MainCoroutineRule()
 
     @Before
-    fun setUp() {
+    fun setupViewModel() {
         articlesRepository = FakeArticlesRepository()
         sharedViewModel = SharedViewModel(articlesRepository)
     }

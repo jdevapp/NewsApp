@@ -48,6 +48,7 @@ android {
         resources.excludes.add("META-INF/AL2.0")
         resources.excludes.add("META-INF/LGPL2.1")
     }
+    dynamicFeatures += setOf(":app:overview")
 
 }
 
@@ -99,6 +100,7 @@ dependencies {
     debugImplementation (Libs.AndroidX.Fragment.testing)
     androidTestImplementation(Libs.AndroidX.Test.Ext.junitKtx)
     androidTestImplementation(Libs.AndroidX.Test.Espresso.core)
+    androidTestImplementation(Libs.AndroidX.Test.Espresso.contrib)
     androidTestImplementation(Libs.AndroidX.Test.archCore)
     androidTestImplementation(Libs.AndroidX.Navigation.testing)
     androidTestImplementation(Libs.Kotlin.Coroutines.test)

@@ -18,14 +18,14 @@ class ArticlesRepositoryImpl @Inject constructor(
 ) : ArticlesRepository {
 
     override suspend fun getArticles(forceUpdate: Boolean): Result<List<Article>> {
-        return try {
-            if(forceUpdate){
+        if (forceUpdate) {
+            try {
                 updateArticlesFromRemoteDataSource()
+            } catch (ex: Exception) {
+                return Error(ex)
             }
-            localDataSource.getArticles()
-        } catch (ex: Exception) {
-            Error(ex)
         }
+        return localDataSource.getArticles()
     }
     override suspend fun refreshArticles() {
         updateArticlesFromRemoteDataSource()
