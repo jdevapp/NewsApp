@@ -1,7 +1,7 @@
 plugins {
-    kotlin("kapt")
     id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    kotlin("android")
+    kotlin("kapt")
     id("dagger.hilt.android.plugin")
 }
 
@@ -38,6 +38,15 @@ android {
     }
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
+    }
+    testOptions {
+        unitTests.isIncludeAndroidResources = true
+    }
+    packagingOptions {
+        resources.excludes.add("**/attach_hotspot_windows.dll")
+        resources.excludes.add("META-INF/licenses/**")
+        resources.excludes.add("META-INF/AL2.0")
+        resources.excludes.add("META-INF/LGPL2.1")
     }
 
 }
@@ -90,8 +99,10 @@ dependencies {
     debugImplementation (Libs.AndroidX.Fragment.testing)
     androidTestImplementation(Libs.AndroidX.Test.Ext.junitKtx)
     androidTestImplementation(Libs.AndroidX.Test.Espresso.core)
+    androidTestImplementation(Libs.AndroidX.Test.archCore)
     androidTestImplementation(Libs.AndroidX.Navigation.testing)
     androidTestImplementation(Libs.Kotlin.Coroutines.test)
+    androidTestImplementation(Libs.Google.truth)
     androidTestImplementation(Libs.Google.Hilt.testing)
     kaptAndroidTest(Libs.Google.Hilt.compiler)
 }
