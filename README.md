@@ -38,7 +38,7 @@ Data is observed using Kotlin Flows and the DataBinding Library binds UI compone
 
 ### Screenshots
 Overview screen
-![alt text](https://github.com/jdevapp/NewsApp/blob/main/resources/device-2021-09-24-155523.png?raw=true)
+![alt text](https://github.com/jdevapp/NewsApp/blob/main/resources/Screenshot_20220207_200912.png?raw=true)
 ![alt text](https://github.com/jdevapp/NewsApp/blob/main/resources/Screenshot_20220207_201040.png?raw=true)
 Details screen
 ![alt text](https://github.com/jdevapp/NewsApp/blob/main/resources/Screenshot_20220207_201014.png?raw=true)
