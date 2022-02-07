@@ -70,8 +70,9 @@ class OverviewFragment: Fragment(R.layout.fragment_overview), ArticlesListener {
     private fun CoroutineScope.observeViewModel() {
         launch  {
             viewModel.articles.collect { articles ->
-                Log.d("NEWSAPP_LOG", "articles.size: ${ articles.size}")
-                adpt.submitList(articles)
+                if(articles.size > 3){
+                    adpt.submitList(articles.subList(3, articles.size))
+                }
             }
         }
         launch  {
