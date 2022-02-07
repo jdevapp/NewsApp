@@ -11,21 +11,19 @@ object Libs {
         const val vectordrawableAnimated = "androidx.vectordrawable:vectordrawable-animated:1.1.0"
         const val constraintlayout = "androidx.constraintlayout:constraintlayout:2.1.3"
         const val swiperefreshlayout = "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
-        const val multidex = "com.android.support:multidex:2.0.1"
 
         object Navigation {
             private const val version = "2.5.0-alpha01"
             const val fragmentKtx = "androidx.navigation:navigation-fragment-ktx:$version"
             const val uiKtx = "androidx.navigation:navigation-ui-ktx:$version"
             const val dynamicFeatures = "androidx.navigation:navigation-dynamic-features-fragment:$version"
-            const val test = "androidx.navigation:navigation-testing:$version"
+            const val testing = "androidx.navigation:navigation-testing:$version"
             const val compose ="androidx.navigation:navigation-compose:$version"
             const val gradlePlugin = "androidx.navigation:navigation-safe-args-gradle-plugin:$version"
         }
         object Fragment {
             private const val version = "1.4.0-alpha03"
             const val ktx = "androidx.fragment:fragment-ktx:$version"
-            const val fragment = "androidx.fragment:fragment:$version"
             const val testing = "androidx.fragment:fragment-testing:$version"
         }
         object Activity {
