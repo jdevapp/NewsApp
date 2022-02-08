@@ -1,14 +1,8 @@
 object Libs {
     const val androidGradlePlugin = "com.android.tools.build:gradle:7.1.1"
-    const val lottie = "com.airbnb.android:lottie:4.0.0"
-    const val threetenabp = "com.jakewharton.threetenabp:threetenabp"
-    const val threetenbp = "org.threeten:threetenbp"
-    const val timber = "com.jakewharton.timber:timber"
     object AndroidX {
         const val coreKtx = "androidx.core:core-ktx:1.7.0"
         const val appcompat = "androidx.appcompat:appcompat:1.4.0"
-        const val datastorePreferences = "androidx.datastore:datastore-preferences:1.0.0"
-        const val vectordrawableAnimated = "androidx.vectordrawable:vectordrawable-animated:1.1.0"
         const val constraintlayout = "androidx.constraintlayout:constraintlayout:2.1.3"
         const val swiperefreshlayout = "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
 
@@ -18,7 +12,6 @@ object Libs {
             const val uiKtx = "androidx.navigation:navigation-ui-ktx:$version"
             const val dynamicFeatures = "androidx.navigation:navigation-dynamic-features-fragment:$version"
             const val testing = "androidx.navigation:navigation-testing:$version"
-            const val compose ="androidx.navigation:navigation-compose:$version"
             const val gradlePlugin = "androidx.navigation:navigation-safe-args-gradle-plugin:$version"
         }
         object Fragment {
@@ -27,7 +20,6 @@ object Libs {
             const val testing = "androidx.fragment:fragment-testing:$version"
         }
         object Activity {
-            const val compose = "androidx.activity:activity-compose:1.4.0"
             const val ktx = "androidx.activity:activity-ktx"
         }
         object Legacy {
@@ -55,7 +47,6 @@ object Libs {
             private const val version = "1.4.0"
             const val core = "androidx.test:core:$version"
             const val coreKtx = "androidx.test:core-ktx:$version"
-            const val runner = "androidx.test:runner:$version"
             const val rules = "androidx.test:rules:$version"
             const val archCore = "androidx.arch.core:core-testing:2.1.0"
             object Ext {
@@ -66,9 +57,6 @@ object Libs {
                 private const val version = "3.3.0"
                 const val core = "androidx.test.espresso:espresso-core:$version"
                 const val contrib = "androidx.test.espresso:espresso-contrib:$version"
-                const val intents = "androidx.test.espresso:espresso-intents:$version"
-                const val idlingConcurrent = "androidx.test.espresso.idling:idling-concurrent:$version"
-                const val idlingResource = "androidx.test.espresso:espresso-idling-resource:$version"
             }
         }
     }
@@ -105,11 +93,9 @@ object Libs {
         const val retrofit = "com.squareup.retrofit2:retrofit:$version"
         const val converterGson = "com.squareup.retrofit2:converter-gson:$version"
         const val converterScalars = "com.squareup.retrofit2:converter-scalars:$version"
-        const val okio = "com.squareup.okio:okio"
     }
     object okhttp3 {
         private const val version = "4.9.3"
-        const val okhttp = "com.squareup.okhttp3:okhttp:$version"
         const val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:$version"
     }
     object Glide {
@@ -119,17 +105,5 @@ object Libs {
     }
     object Test {
         const val junit = "junit:junit:4.13.1"
-        const val MOCKITO_CORE = "org.mockito:mockito-core"
-        const val MOCKITO_KOTLIN = "com.nhaarman:mockito-kotlin"
-        object Robolectric {
-            private const val version = "4.5.1"
-            const val library = "org.robolectric:robolectric:$version"
-            const val annotations = "org.robolectric:annotations:$version"
-        }
-        object Hamcrest {
-            private const val version = "1.3"
-            const val library = "org.hamcrest:hamcrest-library:$version"
-            const val all = "org.hamcrest:hamcrest-all:$version"
-        }
     }
 }

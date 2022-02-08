@@ -11,7 +11,7 @@ interface ArticlesRepository {
     /**
      * Returns a list of [Article]s. When the parameter is passed as true,
      * it's guaranteed the data loaded from this use case is up to date with the
-     * remote data source
+     * remote data source, forceUpdate can be used when the device is offline for example.
      */
     suspend fun getArticles(forceUpdate: Boolean = true): Result<List<Article>>
     suspend fun refreshArticles()

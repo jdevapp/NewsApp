@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.newsapp.R
 import com.newsapp.databinding.ItemArticleDetailsBinding
 import com.newsapp.domain.model.Article
@@ -41,7 +40,6 @@ class ArticlesDetailsAdapter(
                 .load(article.urlToImage)
                 .fallback(ColorDrawable(Color.GRAY))
                 .centerCrop()
-                .transition(DrawableTransitionOptions.withCrossFade())
                 .into(binding.articleImg)
 
 
@@ -62,11 +60,11 @@ class ArticlesDetailsAdapter(
     override fun getItemCount(): Int {
         return data.currentList.size
     }
-    fun submitList(stations: List<Article>) {
-        if (stations.isEmpty()) {
+    fun submitList(articles: List<Article>) {
+        if (articles.isEmpty()) {
             data.submitList(emptyList())
             return
         }
-        data.submitList(stations)
+        data.submitList(articles)
     }
 }

@@ -4,7 +4,7 @@ import com.newsapp.domain.model.Article
 import com.newsapp.result.Result
 
 /**
- * Main entry point for accessing articles data.
+ * Main entry point for accessing articles data (locally).
  */
 interface AppLocalDataSource {
     suspend fun getArticles(): Result<List<Article>>

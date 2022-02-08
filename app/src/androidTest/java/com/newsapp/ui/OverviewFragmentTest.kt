@@ -69,9 +69,9 @@ class OverviewFragmentTest {
         assertEquals(navController.currentDestination?.id, R.id.detailsFragment)
 
         // WHEN - Click on the first list item
-        onView(withId(R.id.article_recyclerView))
+        /*onView(withId(R.id.article_recyclerView))
             .perform(RecyclerViewActions.actionOnItem<RecyclerView.ViewHolder>(
-                hasDescendant(withText("TITLE1")), click()))
+                hasDescendant(withText("title")), click()))*/
     }
 
     private fun launchFragment(navController: TestNavHostController) {
