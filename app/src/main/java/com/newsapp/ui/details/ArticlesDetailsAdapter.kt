@@ -20,7 +20,7 @@ class ArticlesDetailsAdapter(
     private val data: AsyncListDiffer<Article> = AsyncListDiffer(this, object:
         DiffUtil.ItemCallback<Article>() {
         override fun areItemsTheSame(oldItem: Article, newItem: Article): Boolean {
-            return oldItem.equals(newItem)
+            return oldItem.id == newItem.id
         }
         override fun areContentsTheSame(oldItem: Article, newItem: Article): Boolean {
             return oldItem.equals(newItem)
@@ -61,10 +61,6 @@ class ArticlesDetailsAdapter(
         return data.currentList.size
     }
     fun submitList(articles: List<Article>) {
-        if (articles.isEmpty()) {
-            data.submitList(emptyList())
-            return
-        }
         data.submitList(articles)
     }
 }

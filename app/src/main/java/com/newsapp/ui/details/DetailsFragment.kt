@@ -6,13 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import com.newsapp.R
 import com.newsapp.databinding.FragmentDetailsBinding
 import com.newsapp.ui.SharedViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class DetailsFragment: Fragment(R.layout.fragment_details) {
+class DetailsFragment: Fragment() {
     private lateinit var binding: FragmentDetailsBinding
     private val viewModel: SharedViewModel by activityViewModels()
     private lateinit var adpt: ArticlesDetailsAdapter

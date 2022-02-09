@@ -24,7 +24,7 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class OverviewFragment: Fragment(R.layout.fragment_overview), ArticlesListener {
+class OverviewFragment: Fragment(), ArticlesListener {
     private lateinit var binding: FragmentOverviewBinding
     private val viewModel: SharedViewModel by activityViewModels()
     private lateinit var adpt: ArticlesAdapter
