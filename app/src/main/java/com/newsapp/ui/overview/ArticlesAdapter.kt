@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.newsapp.R
 import com.newsapp.databinding.ItemArticleBinding
 import com.newsapp.domain.model.Article
@@ -21,7 +20,7 @@ class ArticlesAdapter(
     private val data: AsyncListDiffer<Article> = AsyncListDiffer(this, object:
         DiffUtil.ItemCallback<Article>() {
         override fun areItemsTheSame(oldItem: Article, newItem: Article): Boolean {
-            return oldItem.equals(newItem)
+            return oldItem.id == newItem.id
         }
         override fun areContentsTheSame(oldItem: Article, newItem: Article): Boolean {
             return oldItem.equals(newItem)
@@ -43,7 +42,6 @@ class ArticlesAdapter(
                 .load(article.urlToImage)
                 .fallback(ColorDrawable(Color.GRAY))
                 .centerCrop()
-                .transition(DrawableTransitionOptions.withCrossFade())
                 .into(binding.articleImg)
 
 
@@ -64,11 +62,7 @@ class ArticlesAdapter(
     override fun getItemCount(): Int {
         return data.currentList.size
     }
-    fun submitList(stations: List<Article>) {
-        if (stations.isEmpty()) {
-            data.submitList(emptyList())
-            return
-        }
-        data.submitList(stations)
+    fun submitList(articles: List<Article>) {
+        data.submitList(articles)
     }
 }

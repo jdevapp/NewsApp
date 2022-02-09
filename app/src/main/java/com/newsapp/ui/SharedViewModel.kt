@@ -19,15 +19,6 @@ class SharedViewModel @Inject constructor(
     private val _articles = MutableStateFlow<List<Article>>(emptyList())
     val articles: StateFlow<List<Article>> = _articles
 
-    private val _firstArticle = MutableStateFlow<Article?>(null)
-    val firstArticle: StateFlow<Article?> = _firstArticle
-
-    private val _secondArticle = MutableStateFlow<Article?>(null)
-    val secondArticle: StateFlow<Article?> = _secondArticle
-
-    private val _thirdArticle = MutableStateFlow<Article?>(null)
-    val thirdArticle: StateFlow<Article?> = _thirdArticle
-
     init {
         fetchArticles()
     }
@@ -39,9 +30,6 @@ class SharedViewModel @Inject constructor(
                 is Result.Success -> {
                     val articles =  result.data
                     _articles.value = articles
-                    _firstArticle.value  = articles.first()
-                    _secondArticle.value  = articles[1]
-                    _thirdArticle.value  = articles[2]
                 }
                 is Result.Loading -> {}
                 is Result.Error -> {}

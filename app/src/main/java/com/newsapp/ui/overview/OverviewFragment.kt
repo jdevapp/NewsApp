@@ -69,54 +69,43 @@ class OverviewFragment: Fragment(R.layout.fragment_overview), ArticlesListener {
     private fun CoroutineScope.observeViewModel() {
         launch  {
             viewModel.articles.collect { articles ->
+                adpt.submitList(articles)
                 if(articles.size > 3){
-                    adpt.submitList(articles.subList(3, articles.size))
-                }
-            }
-        }
-        launch  {
-            viewModel.firstArticle.collect { article ->
-                if(article != null){
+                    val firstArticle  = articles.first()
+                    val secondArticle  = articles[1]
+                    val thirdArticle  = articles[2]
+
                     binding.firstArticleProgress.hide()
 
                     Glide
                         .with(this@OverviewFragment)
-                        .load(article.urlToImage)
+                        .load(firstArticle.urlToImage)
                         .fallback(ColorDrawable(Color.GRAY))
                         .centerCrop()
                         .into(binding.firstArticleImg)
 
-                    binding.firstArticleCard.setOnClickListener {
-                        navigateToDetails(0)
-                    }
-                }
-            }
-        }
-        launch  {
-            viewModel.secondArticle.collect { article ->
-                if(article != null){
                     Glide
                         .with(this@OverviewFragment)
-                        .load(article.urlToImage)
+                        .load(secondArticle.urlToImage)
                         .fallback(ColorDrawable(Color.GRAY))
                         .centerCrop()
                         .into(binding.secondArticleImg)
 
-                    binding.secondArticleCard.setOnClickListener {
-                        navigateToDetails(1)
-                    }
-                }
-            }
-        }
-        launch  {
-            viewModel.thirdArticle.collect { article ->
-                if(article != null){
                     Glide
                         .with(this@OverviewFragment)
-                        .load(article.urlToImage)
+                        .load(thirdArticle.urlToImage)
                         .fallback(ColorDrawable(Color.GRAY))
                         .centerCrop()
                         .into(binding.thirdArticleImg)
+
+
+                    binding.firstArticleCard.setOnClickListener {
+                        navigateToDetails(0)
+                    }
+
+                    binding.secondArticleCard.setOnClickListener {
+                        navigateToDetails(1)
+                    }
 
                     binding.thirdArticleCard.setOnClickListener {
                         navigateToDetails(2)
