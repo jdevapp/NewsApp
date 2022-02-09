@@ -70,12 +70,19 @@ class OverviewFragment: Fragment(R.layout.fragment_overview), ArticlesListener {
         launch  {
             viewModel.articles.collect { articles ->
                 adpt.submitList(articles)
+                binding.firstArticleProgress.hide()
+
                 if(articles.size > 3){
                     val firstArticle  = articles.first()
-                    val secondArticle  = articles[1]
+                    val secondArticle = articles[1]
                     val thirdArticle  = articles[2]
 
-                    binding.firstArticleProgress.hide()
+                    binding.firstArticleTitle.text = firstArticle.title
+                    binding.firstArticleSource.text = firstArticle.source
+                    binding.secondArticleTitle.text = secondArticle.title
+                    binding.secondArticleSource.text = secondArticle.source
+                    binding.thirdArticleTitle.text = thirdArticle.title
+                    binding.thirdArticleSource.text = thirdArticle.source
 
                     Glide
                         .with(this@OverviewFragment)
